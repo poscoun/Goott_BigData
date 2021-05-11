@@ -1,0 +1,64 @@
++ scikit-learn 기반 framework
+       
+                                                     구현클래스
+                                                   DecisionTreeClassifier
+                ----------- 분류 - Classifier      RandomForestClassifier
+Estimator                                          GrandientBoostingClassifier
+                                                   GaussianNB
+                                                   SVC 
+                                                   ...
+                                                   
+                                                   
+                                                   LinearRegression
+                ----------- 회귀 - Regressor       Ridge
+                                                   Lasso
+                                                   RandomForestRegressor
+                                                   GrandientBoostingRegressor
+                                                   ...
+                                                   
+                                                   
+학습 : fit()
+예측 : predict()
+
+-------------------------------------------------------------------------------
++ 사이킷런 주요 모듈
+
+예제 데이터 : sklearn.datasets - 사이킷런에 내장되어있는 데이터 세트
+
+피처 처리   : sklearn.preprocessing - 데이터 전처리에 필요한 기능 제공
+                                     ex) 인코딩, 정규화, 스케일링 ...
+              sklearn.feature_selection - 알고리즘에 큰 영향을 미치는 피처를 우선 순위대로 셀렉션 작업을 수행하는 다양한 기능 제공
+              sklearn.feature_extraction - 텍스트 데이터나 이미지 데이터의 백터화된 피처를 추출하는 용도 
+
+피처처리 & 차원 축소 : sklearn.decomposition - 차원축소와 관련된 알고리즘 지원
+                      ex) PCA, NMF, Truncated SVD
+데이터 분리, 검증, 파라미터 튜닝 : sklearn.model_selection - 교차 검증을 위한 학습용/테스트용 데이터 셋 분리
+
+평가 : sklearn.metrics - 다양한 성능 측정 방법 도구 제공
+                        ex) accuracy, precision, recall, roc-auc, RMSE ...
+                   
+머신러닝 알고리즘 : sklearn.ensemble - 앙상블 알고리즘
+                        ex) 랜덤 포레스트, 에이다 부스트, 그래디언트 부스팅
+                    sklearn.linear_model - 회귀 관련 알고리즘
+                        ex) 선형회귀, 릿지, 라소, 로지스틱 회귀, SGD 알고리즘도 지원
+                    sklearn.naive_bayes - 나이브 베이즈 알고리즘
+                        ex) 가우시안NB, 다항 분포 NB
+                    sklearn.neighbors - 최근접 이웃 알고리즘
+                        ex) K-NN
+                    sklearn.svm - 서포트 벡터 머신 알고리즘
+                    sklearn.tree - 의사 결정 트리 알고리즘
+                    sklearn.cluster - 비지도 클러스터링 알고리즘
+                           ex) K-평균, 계층형, DBSCAN
+유틸리티 : sklearn.pipeline - 피처 처리 등 변환, ML 알고리즘 학습, 예측을 함께 묶어서 실행할 수 있도록 하는 도구들을 지원
+
+------------------------------------------------------------------------------
++ 사이킷런 내장 데이터 세트
+datasets.load_iris() : 붓꽃에 대한 피처를 가진 데이터 세트 - 분류용도
+datasets.load_digits() : 0부터 9까지 숫자 이미지 픽셀 데이터 세트 - 분류용도
+datasets.load_boston() : 미국 보스턴 집 피처들과 가격에 대한 데이터 세트 - 회귀용도
+datasets.load_diabetes() : 당뇨 데이터 세트 - 회귀용도
+datasets.load_breast_cancer() : 위스콘신 유방함 피처들과 악성/음성 레이블 데이터 셋 - 분류용도
+
+참고. fetch 계열 세트 
+ : 데이터의 크기가 커서 패키지에 처음부터 저장되어 있지 않고 호출 시 인터넷을 통해 내려 받아서
+   scikit_learn_data 라는 서브 디렉토리에 저장 한 후 추후 불러들여서 사용하는 데이터 세트
